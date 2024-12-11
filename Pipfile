@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+whitenoise = "*"
+dj-database-url = "*"
+dynaconf = "*"
+jinja2 = "*"
+celery = "*"
+django-storages = "*"
+
+[dev-packages]
+black = "*"
+coverage = "*"
+httpie = "*"
+isort = "*"
+pudb = "*"
+codecov = "*"
+
+[requires]
+python_version = "3.13"
+python_full_version = "3.13.0"

@@ -1,0 +1,57 @@
+{#{% extends "base.html" %}#}
+
+<!DOCTYPE html>
+
+<head>
+
+    {% if not debug %}
+        {{ yandex_metrika | safe }}
+        {{ yandex_metateg_webmaster | safe }}
+        {{ google_analytics | safe }}
+        {{ google_tag_manager_head | safe }}
+    {% endif %}
+
+    <meta charset="UTF-8">
+    <title>Playlist YaMusic from Sergey Kasperovich</title>
+    <link href="{{ static('css/stylemusicpl.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
+          rel="stylesheet">
+    <link href="{{ url('favicon') }}" rel="shortcut icon" type="image/png"/>
+
+</head>
+
+<body>
+
+    {% if not debug %}
+        {{ google_tag_manager_body | safe }}
+    {% endif %}
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="{{ static('images/logo.png') }}" alt="Creative solutions">
+            </div>
+
+            <nav class="nav">
+                <a class="nav__link" href="{{ url('index:index') }}">Target</a>
+                <a class="nav__link" href="{{ url('psychedelic:index') }}">Resume</a>
+                <a class="nav__link" href="{{ url('projects:index') }}">Projects</a>
+                <a class="nav__link" href="{{ url('musicpl:index') }}">Playlist</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Intro -->
+<div class="intro">
+        <iframe frameborder="0" style="border:none;width:100%;height:650px;" width="100%" height="650"
+                src="https://music.yandex.ru/iframe/#playlist/sa.kasperovich/3">Слушайте <a
+                href='https://music.yandex.ru/users/sa.kasperovich/playlists/3'>Мне нравится</a> — <a
+                href='https://music.yandex.ru/users/sa.kasperovich'>Сергей Касперович</a> на Яндекс.Музыке
+        </iframe>
+</div>
+
+</body>
+</html>

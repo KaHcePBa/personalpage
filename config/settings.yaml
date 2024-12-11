@@ -1,0 +1,31 @@
+default:
+  ALLOWED_HOSTS: []
+  DATABASE_URL: ""
+  DEBUG: true
+  SECRET_KEY: ""
+  SENTRY_DSN: ""
+
+development:
+  DEBUG: true
+
+heroku:
+  ALLOWED_HOSTS:
+    - .sakasper.herokuapp.com
+    - 127.0.0.1
+    - localhost
+  DEBUG: false
+
+test:
+  EMAIL_FROM: "test@test.name"
+  MODE_CACHING: 1
+  MODE_DEBUG: 1
+  MODE_PROFILING: 0
+  SECRET_KEY: "secret"
+
+travis:
+  DATABASE_URL: "postgresql://postgres@localhost:5432/sa" # файл который идет на GitHab
+  DEBUG: true
+  SECRET_KEY: "secret"
+
+dropbox:
+  DROPBOX_OAUTH2_TOKEN: "secret"

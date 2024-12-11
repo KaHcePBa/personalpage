@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #6c7279;
+    -webkit-font-smoothing: antialiased;
+    
+    border-color: #fff;
+    /*    font-family: 'Kaushan Script', cursive;*/
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+/* Container 
+=========================*/
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+/* Header 
+=========================*/
+.header {
+    width: 100%;
+    height: 100px; /* обозначаем размер шапки */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #515369; /*подчеркивает шапку*/
+}
+
+/* Nav 
+=========================*/
+.nav {
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    margin-left: 50px;
+    color: #fff;
+    text-decoration: none;
+    opacity: .75;
+
+    transition: opacity .1s linear;
+}
+
+.nav__link:first-child {
+    margin-left: 0;
+}
+
+.nav__link:hover {
+    color: #e78200; /* цвет ссылок при наведении мыши */
+
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Intro 
+=========================*/
+.intro {
+    display: flex;
+    flex-direction: column; /* каждый новый элемент в Intro будет начинаться с новой строки и занимать всю ширину экрана */
+    justify-content: center; /* выравнивание приветствия по центру Intro */
+    height: 750px;
+    padding-top: 100px; /* отступ от края страницы (появляется ниже шапки) */
+
+    background: #31344e url("backgnd/intro-bg.jpg") center no-repeat; /* файл берется из /project/static/css/backgnd */
+    background-size: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    
+    text-align: center;
+
+}
+
+.intro__title { /* надпись по центру большими */
+    margin: 0 0 30px 0; /* внешний отступ между h1 и h2 */
+    
+    font-family: 'Kaushan Script', cursive;
+    font-size: 65px;
+    line-height: 1.1; /* расстояние между строками */
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase; /* большими */
+}
+
+.intro__subtitle {
+    margin-bottom: 60px; /* отступ от надписи о мудрости до кнопки */
+    
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+/* Button 
+=========================*/
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 14px 40px; /* первое - сверху и снизу, второе - слева и справа */
+    
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    
+    font-family: inherit; /* наследуем шрифт родителя */
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    transition: background .1s linear; /* плавное изменение цвета при наведении курсора */
+}
+
+.btn--red {
+    background-color: #e84545; /* цвет кнопки без наведения курсорв */
+}
+
+.btn--red:hover {
+    background-color: #dd3434; /* цвет кнопки при наведении курсора */
+}
+
+/* Skills
+=========================*/
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+
+.skills__item {
+    width: 33.33333%;
+    padding: 0 40px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.skills__icon {
+    margin-bottom: 25px;
+}
+
+.skills__title {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    color: #2d3033;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.skills__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6c7279;
+}
+
+/* Works
+=========================*/
+.works {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.works__item {
+    width: 25%;
+    height: 350px;
+
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.works__item:hover .works__content {
+    opacity: 1; /* скрывать картинку при наведении курсора */
+}
+
+.works__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate3d(-50%, -50%, 0)
+}
+
+.works__content {
+    display: flex;
+    flex-direction: column; /* чтобы каждый новый элемент в данном блоке занимал всю ширину экрана и был на новой строке */
+    justify-content: center; /*выравниваем надпись по центру */
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(232, 69, 69, .9); /* цвет затемнения */
+    opacity: 0; /* не затемнять фоновым цветом без курсора */
+    text-align: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    transition: opacity .2s linear; /* плавное затемнение */
+}
+
+.works__title {
+    margin-bottom: 5px; /* отступ заголовка от описания */
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.works__text {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Footer
+=========================*/
+.footer {
+    background-color: #3a3e64;
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 70px 0;
+}
+
+.footer__block {
+    width: 33.33333%;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.footer__title {
+    margin-bottom: 10px         ;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.footer__address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .5);
+}
+
+/* Social
+=========================*/
+.social {
+    display: flex;
+}
+
+.social--footer {
+    justify-content: center;
+}
+
+.social__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 4px;
+
+    border: 1px solid #e8ecee;
+
+    transition: background .1s linear;
+}
+
+.social__item:hover {
+    background-color: #e8ecee;
+}
+
+.social__item:hover .social__icon {
+    fill: #e84545;
+}
+
+.social--footer .social__item {
+    background-color: transparent;
+    border-width: 2px;
+    border-color: #fff;
+    border-radius: 2px;
+}
+
+.social--footer .social__item:hover {
+    background-color: #fff;
+}
+
+.social__icon {
+    display: block;
+    height: 18px;
+
+    fill: #c6cacc;
+
+    transition: fill .1s linear;
+}
+
+/* Copyright
+=========================*/
+.copyright {
+    padding: 20px 0;
+    background-color: #313454;
+}
+
+.copyright__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #808080;
+}

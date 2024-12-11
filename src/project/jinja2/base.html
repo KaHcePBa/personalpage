@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+{% block metrika %}
+    {% if not debug %}
+        {{ yandex_metrika | safe }}
+        {{ google_analytics | safe }}
+        {{ google_tag_manager_head | safe }}
+    {% endif %}
+{% endblock %}
+
+{% block head %}{% endblock %}
+
+</head>
+
+<body>
+
+{% if not debug %}
+    {{ google_tag_manager_body | safe }}
+{% endif %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
