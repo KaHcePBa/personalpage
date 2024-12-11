@@ -7,7 +7,7 @@ from dynaconf import settings as _settings
 
 PROJECT_DIR = Path(__file__).parent.resolve()  # /project
 BASE_DIR = PROJECT_DIR.parent.resolve()  # /src
-REPO_DIR = BASE_DIR.parent.resolve()  # /tmssitehp
+REPO_DIR = BASE_DIR.parent.resolve()  # /personalpage
 
 SECRET_KEY = _settings.SECRET_KEY
 
