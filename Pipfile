@@ -11,6 +11,7 @@ dynaconf = "*"
 jinja2 = "*"
 celery = "*"
 django-storages = "*"
+psycopg = "*"
 
 [dev-packages]
 black = "*"
