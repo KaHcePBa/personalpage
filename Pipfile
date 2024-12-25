@@ -7,7 +7,7 @@ name = "pypi"
 django = "*"
 whitenoise = "*"
 dj-database-url = "*"
-dynaconf = "*"
+dynaconf = {extras = ["yaml"], version = "*"}
 jinja2 = "*"
 celery = "*"
 django-storages = "*"
