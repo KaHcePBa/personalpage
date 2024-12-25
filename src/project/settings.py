@@ -3,7 +3,13 @@ from pathlib import Path
 
 import dj_database_url
 from django.urls import reverse_lazy
-from dynaconf import settings as _settings
+from dynaconf import LazySettings
+
+_settings = LazySettings(
+    settings_files=["settings.yaml", ".secrets.yaml"],  # Указываем YAML-файлы
+    environments=True,  # Активируем поддержку окружений
+    env="development"  # Устанавливаем окружение по умолчанию
+)
 
 PROJECT_DIR = Path(__file__).parent.resolve()  # /project
 BASE_DIR = PROJECT_DIR.parent.resolve()  # /src
