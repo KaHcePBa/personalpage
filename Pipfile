@@ -12,6 +12,8 @@ jinja2 = "*"
 celery = "*"
 django-storages = "*"
 psycopg = "*"
+black = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 black = "*"

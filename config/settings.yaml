@@ -23,7 +23,7 @@ test:
   SECRET_KEY: "secret"
 
 travis:
-  DATABASE_URL: "postgresql://postgres@localhost:5432/sa" # файл который идет на GitHab
+  DATABASE_URL: "postgresql://postgres@localhost:5432/sa" # файл, который идет на GitHub
   DEBUG: true
   SECRET_KEY: "secret"
 
