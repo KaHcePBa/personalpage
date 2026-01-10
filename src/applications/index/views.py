@@ -11,7 +11,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
 
-        randomized_id = random.randrange(2, 7)  # если нужны от 2 до 8
+        randomized_id = random.randrange(1, 7)  # если нужны от 1 до 7
 
         try:
             info = IndexInSubInf.objects.get(id=randomized_id)  # если get не находит объекта - ObjectDoesNotExist
