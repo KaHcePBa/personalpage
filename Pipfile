@@ -14,6 +14,8 @@ django-storages = "*"
 psycopg = "*"
 black = "*"
 psycopg2-binary = "*"
+pip = "==25.3"
+pudb = "==2025.1.5"
 
 [dev-packages]
 black = "*"
